@@ -84,7 +84,9 @@ export default function Home() {
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <ul className="svc-points">
-                  {s.points.map((p) => <li key={p}>{p}</li>)}
+                  {s.points.map((p) => (
+                    <li key={p}><Icon name="check" className="svc-chk" />{p}</li>
+                  ))}
                 </ul>
               </div>
             ))}

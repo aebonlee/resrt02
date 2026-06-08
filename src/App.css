@@ -276,13 +276,7 @@
   display: flex; align-items: center; gap: 8px;
   font-size: 0.9rem; color: var(--text); padding: 4px 0;
 }
-.svc-points li::before {
-  content: 'check';
-  font-family: 'Material Symbols Rounded';
-  font-size: 1.05rem;
-  color: var(--green);
-  font-variation-settings: 'wght' 500;
-}
+.svc-points .svc-chk { color: var(--green); font-size: 0.95rem; }
 
 /* ============ CTA band ============ */
 .cta-band {

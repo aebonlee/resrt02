@@ -1,0 +1,129 @@
+:root {
+  /* === 주컬러 === */
+  --navy: #0a1931;        /* 다크블루 */
+  --navy-2: #0d2549;
+  --royal: #2451d6;       /* 로열블루 */
+  --royal-light: #4169e1;
+
+  /* === 포인트 컬러 === */
+  --green: #15803d;       /* 다크그린 */
+  --green-d: #14532d;
+  --red: #991b1b;         /* 다크레드 */
+  --red-d: #7f1d1d;
+
+  /* === 중립 === */
+  --ink: #0f172a;
+  --text: #475569;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --surface: #ffffff;
+  --surface-2: #f5f7fb;
+
+  --radius: 14px;
+  --shadow-sm: 0 1px 3px rgba(10, 25, 49, 0.08);
+  --shadow: 0 14px 40px -18px rgba(10, 25, 49, 0.35);
+  --maxw: 1160px;
+
+  --sans: 'Pretendard', system-ui, 'Apple SD Gothic Neo', 'Segoe UI', Roboto, sans-serif;
+
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+p { margin: 0; }
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--royal);
+  color: #fff;
+  box-shadow: 0 10px 24px -10px var(--royal);
+}
+.btn-primary:hover { background: var(--royal-light); }
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+.btn-dark {
+  background: var(--navy);
+  color: #fff;
+}
+.btn-dark:hover { background: var(--navy-2); }
+
+.section {
+  padding: 96px 0;
+}
+.section.alt { background: var(--surface-2); }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--royal);
+  margin-bottom: 14px;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+}
+.section-head p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .section { padding: 64px 0; }
+}

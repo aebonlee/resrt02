@@ -17,7 +17,7 @@ export const yearsInBusiness = new Date().getFullYear() - 2003
 export const services = [
   {
     id: 'software',
-    icon: '⚙️',
+    icon: 'terminal',
     title: '프로그램 개발',
     desc: '업무 자동화, 맞춤형 솔루션, 데스크톱·서버 애플리케이션까지 요구사항에 꼭 맞는 소프트웨어를 설계·개발합니다.',
     points: ['맞춤형 SI / 솔루션', '업무 자동화', '유지보수 & 운영'],
@@ -25,7 +25,7 @@ export const services = [
   },
   {
     id: 'web',
-    icon: '🌐',
+    icon: 'language',
     title: '웹 개발',
     desc: '반응형 웹사이트, 웹 애플리케이션, 쇼핑몰, 관리자 시스템을 최신 기술 스택으로 빠르고 견고하게 구축합니다.',
     points: ['반응형 웹사이트', 'React / SPA', '쇼핑몰 · CMS'],
@@ -33,7 +33,7 @@ export const services = [
   },
   {
     id: 'hardware',
-    icon: '💻',
+    icon: 'computer',
     title: '컴퓨터 판매 · 구축',
     desc: '20년 노하우로 사무용·개발용·서버 장비를 합리적으로 공급하고 네트워크 구축까지 책임집니다.',
     points: ['PC · 서버 공급', '네트워크 구축', '사후 기술지원'],
@@ -41,7 +41,7 @@ export const services = [
   },
   {
     id: 'consulting',
-    icon: '🛡️',
+    icon: 'shield',
     title: '유지보수 · 컨설팅',
     desc: '안정적인 운영을 위한 모니터링, 보안 점검, IT 인프라 컨설팅을 제공합니다.',
     points: ['시스템 운영', '보안 점검', 'IT 컨설팅'],

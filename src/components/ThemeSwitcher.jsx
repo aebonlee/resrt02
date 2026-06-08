@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import Icon from './Icon.jsx'
 import { useTheme, PALETTES } from '../theme/useTheme.js'
 
 export default function ThemeSwitcher() {
@@ -24,7 +25,7 @@ export default function ThemeSwitcher() {
         aria-label={mode === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
         title={mode === 'dark' ? '라이트 모드' : '다크 모드'}
       >
-        {mode === 'dark' ? '☀️' : '🌙'}
+        <Icon name={mode === 'dark' ? 'light_mode' : 'dark_mode'} />
       </button>
 
       {/* 컬러 팔레트 선택 */}
@@ -36,7 +37,7 @@ export default function ThemeSwitcher() {
           aria-expanded={open}
           title="컬러 변경"
         >
-          🎨
+          <Icon name="palette" />
         </button>
 
         {open && (
@@ -52,7 +53,7 @@ export default function ThemeSwitcher() {
                   aria-label={p.label}
                   title={p.label}
                 >
-                  {palette === p.id ? '✓' : ''}
+                  {palette === p.id ? <Icon name="check" /> : ''}
                 </button>
               ))}
             </div>

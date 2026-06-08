@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
 import { company, services, stats, yearsInBusiness } from '../data/company.js'
 
 export default function Home() {
@@ -8,7 +9,9 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-inner">
           <div>
-            <span className="hero-badge">🚀 Since 2003 · {yearsInBusiness}년의 IT 파트너</span>
+            <span className="hero-badge">
+              <Icon name="auto_awesome" /> Since 2003 · {yearsInBusiness}년의 IT 파트너
+            </span>
             <h1>
               기술로 비즈니스의<br />
               <span className="accent">꿈을 현실로</span> 만듭니다
@@ -26,22 +29,22 @@ export default function Home() {
           <div className="hero-visual">
             <div className="hero-grid2">
               <div className="hero-card">
-                <div className="dot">⚙️</div>
+                <div className="dot"><Icon name="terminal" /></div>
                 <h4>프로그램 개발</h4>
                 <p>맞춤형 솔루션</p>
               </div>
               <div className="hero-card">
-                <div className="dot">🌐</div>
+                <div className="dot"><Icon name="language" /></div>
                 <h4>웹 개발</h4>
                 <p>반응형 · SPA</p>
               </div>
               <div className="hero-card">
-                <div className="dot">💻</div>
+                <div className="dot"><Icon name="computer" /></div>
                 <h4>컴퓨터 판매</h4>
                 <p>PC · 서버 공급</p>
               </div>
               <div className="hero-card">
-                <div className="dot">🛡️</div>
+                <div className="dot"><Icon name="shield" /></div>
                 <h4>유지보수</h4>
                 <p>안정적 운영</p>
               </div>
@@ -75,7 +78,9 @@ export default function Home() {
           <div className="card-grid">
             {services.map((s) => (
               <div className="svc-card" key={s.id}>
-                <div className="svc-icon" style={{ background: s.accent }}>{s.icon}</div>
+                <div className="svc-icon" style={{ background: s.accent }}>
+                  <Icon name={s.icon} />
+                </div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <ul className="svc-points">

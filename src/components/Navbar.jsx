@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { company } from '../data/company.js'
+import Icon from './Icon.jsx'
 import ThemeSwitcher from './ThemeSwitcher.jsx'
 
 const links = [
@@ -46,7 +47,7 @@ export default function Navbar() {
             aria-label="메뉴 열기"
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? '✕' : '☰'}
+            <Icon name={open ? 'close' : 'menu'} />
           </button>
         </div>
       </div>

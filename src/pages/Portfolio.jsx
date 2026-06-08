@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
 import { projects } from '../data/company.js'
+
+const categoryIcon = (cat) =>
+  cat === '웹' || cat === '웹앱' ? 'language'
+    : cat === '인프라' ? 'dns'
+    : 'terminal'
 
 export default function Portfolio() {
   return (
@@ -18,8 +24,7 @@ export default function Portfolio() {
             {projects.map((p) => (
               <article className="pf-card" key={p.id}>
                 <div className="pf-thumb" style={{ background: p.color }}>
-                  {p.category === '웹' || p.category === '웹앱' ? '🌐'
-                    : p.category === '인프라' ? '🖥️' : '⚙️'}
+                  <Icon name={categoryIcon(p.category)} />
                 </div>
                 <div className="pf-body">
                   <div className="cat">{p.category}</div>

@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import Icon from '../components/Icon.jsx'
 import { company } from '../data/company.js'
 
 const info = [
-  { icon: '✉️', title: '이메일', value: company.email, href: `mailto:${company.email}` },
-  { icon: '📞', title: '전화', value: company.phone, href: `tel:${company.phone}` },
-  { icon: '📍', title: '주소', value: company.address },
-  { icon: '🕒', title: '운영시간', value: '평일 09:00 - 18:00' },
+  { icon: 'mail', title: '이메일', value: company.email, href: `mailto:${company.email}` },
+  { icon: 'call', title: '전화', value: company.phone, href: `tel:${company.phone}` },
+  { icon: 'location_on', title: '주소', value: company.address },
+  { icon: 'schedule', title: '운영시간', value: '평일 09:00 - 18:00' },
 ]
 
 export default function Contact() {
@@ -33,7 +34,7 @@ export default function Contact() {
             <h2 style={{ fontSize: '1.6rem', marginBottom: 24 }}>연락처 안내</h2>
             {info.map((i) => (
               <div className="info-item" key={i.title}>
-                <span className="iico">{i.icon}</span>
+                <span className="iico"><Icon name={i.icon} /></span>
                 <span>
                   <strong>{i.title}</strong>
                   {i.href
@@ -73,7 +74,7 @@ export default function Contact() {
               </div>
               {sent && (
                 <div className="form-note">
-                  ✓ 문의가 접수되었습니다. (데모 — 실제 전송은 백엔드 연동 시 동작합니다)
+                  <Icon name="check_circle" fill /> 문의가 접수되었습니다. (데모 — 실제 전송은 백엔드 연동 시 동작합니다)
                 </div>
               )}
               <button type="submit" className="btn btn-primary" style={{ justifyContent: 'center' }}>

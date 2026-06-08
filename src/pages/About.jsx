@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
 import { company, milestones, stats, yearsInBusiness } from '../data/company.js'
 
 const values = [
-  { icon: '🎯', color: 'var(--royal)', title: '고객 중심', desc: '고객의 비즈니스 성공이 우리의 기준입니다.' },
-  { icon: '🔧', color: 'var(--green)', title: '기술력', desc: '20년 노하우와 최신 기술의 결합.' },
-  { icon: '🤝', color: 'var(--red)', title: '신뢰', desc: '99% 재계약률이 증명하는 책임감.' },
+  { icon: 'favorite', color: 'var(--royal)', title: '고객 중심', desc: '고객의 비즈니스 성공이 우리의 기준입니다.' },
+  { icon: 'build', color: 'var(--green)', title: '기술력', desc: '20년 노하우와 최신 기술의 결합.' },
+  { icon: 'handshake', color: 'var(--red)', title: '신뢰', desc: '99% 재계약률이 증명하는 책임감.' },
 ]
 
 export default function About() {
@@ -35,7 +36,9 @@ export default function About() {
             <ul className="value-list">
               {values.map((v) => (
                 <li key={v.title}>
-                  <span className="vico" style={{ background: v.color }}>{v.icon}</span>
+                  <span className="vico" style={{ background: v.color }}>
+                    <Icon name={v.icon} />
+                  </span>
                   <span>
                     <strong>{v.title}</strong>
                     <span>{v.desc}</span>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
 import { services } from '../data/company.js'
 
 const process = [
@@ -24,7 +25,9 @@ export default function Services() {
           <div className="card-grid">
             {services.map((s) => (
               <div className="svc-card" key={s.id}>
-                <div className="svc-icon" style={{ background: s.accent }}>{s.icon}</div>
+                <div className="svc-icon" style={{ background: s.accent }}>
+                  <Icon name={s.icon} />
+                </div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <ul className="svc-points">

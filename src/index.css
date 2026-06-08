@@ -11,6 +11,10 @@
   --red: #991b1b;         /* 다크레드 */
   --red-d: #7f1d1d;
 
+  /* === CTA 버튼 (흰 글자 가독성 보장: WCAG AA 통과 색상) === */
+  --cta-bg: #1d4ed8;
+  --cta-bg-hover: #2451d6;
+
   /* === 중립 (라이트 모드 기본) === */
   --ink: #0f172a;
   --text: #475569;
@@ -52,18 +56,22 @@
 :root[data-palette='emerald'] {
   --navy: #052e2b; --navy-2: #064e3b;
   --royal: #059669; --royal-light: #10b981;
+  --cta-bg: #047857; --cta-bg-hover: #059669;
 }
 :root[data-palette='crimson'] {
   --navy: #3b0a0a; --navy-2: #5b1414;
   --royal: #dc2626; --royal-light: #ef4444;
+  --cta-bg: #b91c1c; --cta-bg-hover: #dc2626;
 }
 :root[data-palette='violet'] {
   --navy: #2e1065; --navy-2: #3b0764;
   --royal: #7c3aed; --royal-light: #8b5cf6;
+  --cta-bg: #6d28d9; --cta-bg-hover: #7c3aed;
 }
 :root[data-palette='amber'] {
   --navy: #451a03; --navy-2: #5c2604;
   --royal: #d97706; --royal-light: #f59e0b;
+  --cta-bg: #b45309; --cta-bg-hover: #c2630a;
 }
 
 * { box-sizing: border-box; }
@@ -110,11 +118,11 @@ p { margin: 0; }
 .btn:hover { transform: translateY(-2px); }
 
 .btn-primary {
-  background: var(--royal);
+  background: var(--cta-bg);
   color: #fff;
-  box-shadow: 0 10px 24px -10px var(--royal);
+  box-shadow: 0 10px 24px -10px var(--cta-bg);
 }
-.btn-primary:hover { background: var(--royal-light); }
+.btn-primary:hover { background: var(--cta-bg-hover); }
 
 .btn-ghost {
   background: transparent;

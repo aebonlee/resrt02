@@ -1,6 +1,6 @@
 // 아이콘 세트 전환: 'material' | 'fontawesome'
 // 이 값만 바꾸면 사이트 전체 아이콘 스타일이 전환됩니다.
-export const ICON_SET = 'fontawesome'
+export const ICON_SET = 'material'
 
 // 의미 기반 이름 → Font Awesome(solid) 클래스 매핑
 export const FA_MAP = {

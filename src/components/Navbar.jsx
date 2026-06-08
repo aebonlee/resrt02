@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { company } from '../data/company.js'
+import ThemeSwitcher from './ThemeSwitcher.jsx'
 
 const links = [
   { to: '/', label: '홈', end: true },
@@ -21,28 +22,33 @@ export default function Navbar() {
           {company.name}
         </Link>
 
-        <button
-          className="nav-toggle"
-          aria-label="메뉴 열기"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? '✕' : '☰'}
-        </button>
-
-        <ul className={`nav-links ${open ? 'open' : ''}`}>
-          {links.map((l) => (
-            <li key={l.to}>
-              <NavLink to={l.to} end={l.end} onClick={() => setOpen(false)}>
-                {l.label}
-              </NavLink>
+        <div className="nav-right">
+          <ul className={`nav-links ${open ? 'open' : ''}`}>
+            {links.map((l) => (
+              <li key={l.to}>
+                <NavLink to={l.to} end={l.end} onClick={() => setOpen(false)}>
+                  {l.label}
+                </NavLink>
+              </li>
+            ))}
+            <li className="nav-cta">
+              <Link to="/contact" className="btn btn-primary" onClick={() => setOpen(false)}>
+                상담 신청
+              </Link>
             </li>
-          ))}
-          <li className="nav-cta">
-            <Link to="/contact" className="btn btn-primary" onClick={() => setOpen(false)}>
-              상담 신청
-            </Link>
-          </li>
-        </ul>
+          </ul>
+
+          {/* 상담 신청 버튼 뒤: 다크/라이트 + 컬러 팔레트 */}
+          <ThemeSwitcher />
+
+          <button
+            className="nav-toggle"
+            aria-label="메뉴 열기"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
     </header>
   )

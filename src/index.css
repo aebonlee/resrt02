@@ -11,13 +11,14 @@
   --red: #991b1b;         /* 다크레드 */
   --red-d: #7f1d1d;
 
-  /* === 중립 === */
+  /* === 중립 (라이트 모드 기본) === */
   --ink: #0f172a;
   --text: #475569;
   --muted: #64748b;
   --line: #e2e8f0;
   --surface: #ffffff;
   --surface-2: #f5f7fb;
+  --nav-bg: rgba(255, 255, 255, 0.85);
 
   --radius: 14px;
   --shadow-sm: 0 1px 3px rgba(10, 25, 49, 0.08);
@@ -30,6 +31,39 @@
   color: var(--text);
   background: var(--surface);
   -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ========= 다크 모드 ========= */
+:root[data-mode='dark'] {
+  --ink: #f1f5f9;
+  --text: #cbd5e1;
+  --muted: #94a3b8;
+  --line: #1e293b;
+  --surface: #0b1220;
+  --surface-2: #111c33;
+  --nav-bg: rgba(11, 18, 32, 0.85);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow: 0 18px 44px -18px rgba(0, 0, 0, 0.75);
+}
+
+/* ========= 컬러 팔레트 (주컬러 5종) ========= */
+/* 1) Royal Blue — 기본값은 위 :root 에 정의됨 */
+:root[data-palette='emerald'] {
+  --navy: #052e2b; --navy-2: #064e3b;
+  --royal: #059669; --royal-light: #10b981;
+}
+:root[data-palette='crimson'] {
+  --navy: #3b0a0a; --navy-2: #5b1414;
+  --royal: #dc2626; --royal-light: #ef4444;
+}
+:root[data-palette='violet'] {
+  --navy: #2e1065; --navy-2: #3b0764;
+  --royal: #7c3aed; --royal-light: #8b5cf6;
+}
+:root[data-palette='amber'] {
+  --navy: #451a03; --navy-2: #5c2604;
+  --royal: #d97706; --royal-light: #f59e0b;
 }
 
 * { box-sizing: border-box; }

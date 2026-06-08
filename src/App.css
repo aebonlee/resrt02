@@ -3,9 +3,10 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 .nav-inner {
   display: flex;
@@ -19,7 +20,7 @@
   gap: 10px;
   font-weight: 800;
   font-size: 1.2rem;
-  color: var(--navy);
+  color: var(--ink);
 }
 .brand .logo-mark {
   width: 34px;
@@ -50,9 +51,70 @@
   color: var(--text);
   transition: color 0.15s, background 0.15s;
 }
-.nav-links a:hover { color: var(--navy); background: var(--surface-2); }
+.nav-links a:hover { color: var(--ink); background: var(--surface-2); }
 .nav-links a.active { color: var(--royal); }
 .nav-cta { margin-left: 10px; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Theme switcher (다크모드 + 컬러 팔레트) ===== */
+.theme-tools { display: flex; align-items: center; gap: 4px; }
+.palette-wrap { position: relative; }
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+.theme-btn:hover { border-color: var(--royal); transform: translateY(-1px); }
+
+.palette-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+  z-index: 60;
+  min-width: 184px;
+}
+.palette-title {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.palette-dots { display: flex; gap: 8px; }
+.palette-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--line);
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  transition: transform 0.12s;
+}
+.palette-dot:hover { transform: scale(1.12); }
+.palette-dot.active { box-shadow: 0 0 0 2px var(--royal); }
 
 .nav-toggle {
   display: none;
@@ -60,7 +122,7 @@
   border: none;
   cursor: pointer;
   font-size: 1.6rem;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 @media (max-width: 860px) {
@@ -73,7 +135,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 2px;
-    background: #fff;
+    background: var(--surface);
     padding: 12px 16px 20px;
     border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow);
@@ -187,7 +249,7 @@
   gap: 24px;
 }
 .svc-card {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 30px 26px;
@@ -262,7 +324,7 @@
 .tl-item { position: relative; padding: 0 0 34px 24px; }
 .tl-item::before {
   content: ''; position: absolute; left: -26px; top: 4px; width: 16px; height: 16px;
-  border-radius: 50%; background: #fff; border: 3px solid var(--royal);
+  border-radius: 50%; background: var(--surface); border: 3px solid var(--royal);
 }
 .tl-year { font-weight: 800; color: var(--royal); font-size: 1.05rem; }
 .tl-item h4 { margin: 4px 0 6px; }
@@ -273,7 +335,7 @@
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -304,7 +366,7 @@
 .field label { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
 .field input, .field textarea, .field select {
   width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px;
-  font: inherit; font-size: 0.95rem; background: #fff; color: var(--ink);
+  font: inherit; font-size: 0.95rem; background: var(--surface); color: var(--ink);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .field input:focus, .field textarea:focus, .field select:focus {

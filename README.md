@@ -1,4 +1,4 @@
-# DreamIT Biz — 회사 소개 웹사이트 (resrt02)
+# DreamIT Biz — 회사 소개 웹사이트 (rest02)
 
 IT 개발 회사 **DreamIT Biz**의 공식 회사 소개 사이트입니다.
 컴퓨터 판매 · 프로그램 개발 · 웹개발을 제공하는 종합 IT 기업을 컨셉으로 한 React 기반 샘플 사이트입니다.
@@ -37,5 +37,6 @@ npm run deploy   # gh-pages 배포
 ```
 
 ## 배포
-- GitHub Pages (gh-pages 브랜치 수동 배포)
-- URL: https://aebonlee.github.io/resrt02/
+- GitHub Pages (gh-pages 브랜치 수동 배포: `npm run deploy`)
+- 커스텀 도메인: https://rest02.dreamitbiz.com/ (`public/CNAME`)
+- ※ 커스텀 도메인은 루트 서빙이므로 `vite base: '/'` + HashRouter 조합. (이전 `base: '/resrt02/'`는 자산 404 유발)

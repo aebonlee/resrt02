@@ -1,9 +1,9 @@
 {
-  "name": "resrt02",
+  "name": "rest02",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://aebonlee.github.io/resrt02/",
+  "homepage": "https://rest02.dreamitbiz.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
